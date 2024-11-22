@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média das Idades</title>
+</head>
+<body>
+    <h1>Calculadora da Média das Idades</h1>
+    <p>Informe a idade de 20 pessoas.</p>
+    <script>
+        // Variável para armazenar a soma das idades
+        let somaDasIdades = 0;
+
+        // Loop para ler a idade de 20 pessoas
+        for (let i = 1; i <= 20; i++) {
+            // Solicita a idade da pessoa
+            let idade = parseInt(prompt(`Informe a idade da pessoa ${i}:`), 10);
+
+            // Verifica se o valor é válido
+            if (isNaN(idade) || idade < 0) {
+                alert("Por favor, insira uma idade válida.");
+                i--; // Volta para repetir a entrada
+            } else {
+                somaDasIdades += idade; // Soma a idade
+            }
+        }
+
+        // Calcula a média
+        let mediaDasIdades = somaDasIdades / 20;
+
+        // Exibe a média das idades
+        alert(`A média das idades das 20 pessoas é: ${mediaDasIdades.toFixed(2)}`);
+    </script>
+</body>
+</html>
